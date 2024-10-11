@@ -1,0 +1,74 @@
+<div class="container mt-4">
+  <h2 class="text-center mb-4">Set Thresholds</h2>
+  
+<form #thresholdForm="ngForm" class="needs-validation" novalidate (ngSubmit)="setThresholds()">
+  <!-- Patient ID -->
+  <div class="form-group row mb-3">
+    <label for="patientId" class="col-sm-2 col-form-label">Patient ID:</label>
+    <div class="col-sm-10">
+      <input type="text" id="patientId" class="form-control" [(ngModel)]="thresholds['patientId']" name="patientId" placeholder="Enter Patient ID" required>
+      <div *ngIf="!thresholds['patientId'] && (thresholdForm.submitted || thresholdForm.controls['patientId'].touched)" class="text-danger">
+        Please provide a valid patient ID.
+      </div>
+    </div>
+  </div>
+
+  <!-- Heart Rate -->
+  <div class="form-group row mb-3">
+    <label for="heartRateMin" class="col-sm-2 col-form-label">Heart Rate Min:</label>
+    <div class="col-sm-4">
+      <input type="number" id="heartRateMin" class="form-control" [(ngModel)]="thresholds['heartRate'].min" name="heartRateMin" placeholder="Enter Min Heart Rate" required>
+      <div *ngIf="thresholds['heartRate'].min <= 0 && (thresholdForm.submitted || thresholdForm.controls['heartRateMin'].touched)" class="text-danger">
+        Please provide a valid minimum heart rate.
+      </div>
+    </div>
+    <label for="heartRateMax" class="col-sm-2 col-form-label">Heart Rate Max:</label>
+    <div class="col-sm-4">
+      <input type="number" id="heartRateMax" class="form-control" [(ngModel)]="thresholds['heartRate'].max" name="heartRateMax" placeholder="Enter Max Heart Rate" required>
+      <div *ngIf="thresholds['heartRate'].max <= thresholds['heartRate'].min && (thresholdForm.submitted || thresholdForm.controls['heartRateMax'].touched)" class="text-danger">
+        Max heart rate must be greater than min heart rate.
+      </div>
+    </div>
+  </div>
+
+  <!-- Blood Pressure -->
+  <div class="form-group row mb-3">
+    <label for="bloodPressureMin" class="col-sm-2 col-form-label">Blood Pressure Min:</label>
+    <div class="col-sm-4">
+      <input type="number" id="bloodPressureMin" class="form-control" [(ngModel)]="thresholds['bloodPressure'].min" name="bloodPressureMin" placeholder="Enter Min Blood Pressure" required>
+      <div *ngIf="thresholds['bloodPressure'].min <= 0 && (thresholdForm.submitted || thresholdForm.controls['bloodPressureMin'].touched)" class="text-danger">
+        Please provide a valid minimum blood pressure.
+      </div>
+    </div>
+    <label for="bloodPressureMax" class="col-sm-2 col-form-label">Blood Pressure Max:</label>
+    <div class="col-sm-4">
+      <input type="number" id="bloodPressureMax" class="form-control" [(ngModel)]="thresholds['bloodPressure'].max" name="bloodPressureMax" placeholder="Enter Max Blood Pressure" required>
+      <div *ngIf="thresholds['bloodPressure'].max <= thresholds['bloodPressure'].min && (thresholdForm.submitted || thresholdForm.controls['bloodPressureMax'].touched)" class="text-danger">
+        Max blood pressure must be greater than min blood pressure.
+      </div>
+    </div>
+  </div>
+
+  <!-- Temperature -->
+  <div class="form-group row mb-3">
+    <label for="temperatureMin" class="col-sm-2 col-form-label">Temperature Min:</label>
+    <div class="col-sm-4">
+      <input type="number" id="temperatureMin" class="form-control" [(ngModel)]="thresholds['temperature'].min" name="temperatureMin" placeholder="Enter Min Temperature" required>
+      <div *ngIf="thresholds['temperature'].min <= 0 && (thresholdForm.submitted || thresholdForm.controls['temperatureMin'].touched)" class="text-danger">
+        Please provide a valid minimum temperature.
+      </div>
+    </div>
+    <label for="temperatureMax" class="col-sm-2 col-form-label">Temperature Max:</label>
+    <div class="col-sm-4">
+      <input type="number" id="temperatureMax" class="form-control" [(ngModel)]="thresholds['temperature'].max" name="temperatureMax" placeholder="Enter Max Temperature" required>
+      <div *ngIf="thresholds['temperature'].max <= thresholds['temperature'].min && (thresholdForm.submitted || thresholdForm.controls['temperatureMax'].touched)" class="text-danger">
+        Max temperature must be greater than min temperature.
+      </div>
+    </div>
+  </div>
+
+  <div class="text-center">
+    <button type="submit" class="btn btn-primary">Set Thresholds</button>
+  </div>
+</form>
+</div>

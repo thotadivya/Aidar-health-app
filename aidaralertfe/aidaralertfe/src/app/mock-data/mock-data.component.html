@@ -1,0 +1,47 @@
+<div class="mock-data-container">
+    <h2>Mock Patient Data</h2>
+    <div *ngIf="errorMessage" class="error-message">
+        {{ errorMessage }}
+      </div>
+      <div *ngIf="successmessage" class="successmessage">
+
+        {{ successmessage }}
+      </div>
+      
+    <div class="card">
+      <div class="card-body">
+        <h4 class="card-title">Patient Vital Signs</h4>
+        
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">
+            <span class="label">Heart Rate:</span> 
+            <span class="value">{{ heartRate | number:'1.0-2' }} bpm</span>
+          </li>
+          <li class="list-group-item">
+            <span class="label">Blood Pressure:</span> 
+            <span class="value">{{ bloodPressure | number:'1.0-2' }} mmHg</span>
+          </li>
+          <li class="list-group-item">
+            <span class="label">Temperature:</span> 
+            <span class="value">{{ temperature | number:'1.0-2' }} °F</span>
+          </li>
+        </ul>
+  
+        <hr>
+  
+
+        <div class="container mt-4">
+            <h3 class="text-center mb-4">Change Patient ID for Mock Data</h3>
+          
+            <div class="d-flex justify-content-center">
+              <input type="text" class="form-control w-50" placeholder="Enter Patient ID" [(ngModel)]="newPatientId" />
+              <button (click)="changePatientId()" class="btn btn-primary ms-2">Set Patient ID</button>
+            </div>
+          
+            <p class="info-text text-center">The data is updated every 30 seconds to simulate real-time monitoring.</p>
+          </div>
+          
+
+    </div>
+  </div>
+  

@@ -1,0 +1,79 @@
+
+
+  /* Styling for the main container */
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .custom-alert {
+    background-color: red;
+    color: white; /* Make the text color white for contrast */
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    position: fixed;  /* Makes the notification stay on top even when scrolling */
+    top: 0;           /* Stick it to the top of the window */
+    left: 0;
+    width: 100%;      /* Span the entire width of the page */
+    
+    text-align: center;
+   
+    z-index: 1000;    /* Ensure it stays on top of other elements */
+    font-size: 12px;  /* Adjust font size for better readability */
+  }
+  
+  
+  /* Styling for the horizontal line */
+  hr {
+    margin: 40px 0;
+    border: none;
+    border-top: 2px solid #007bff;
+  }
+  
+  /* Additional styling for inputs and buttons */
+  input[type="text"], input[type="number"] {
+    border: 2px solid #007bff;
+    border-radius: 5px;
+    padding: 10px;
+    width: 100%;
+    margin-bottom: 15px;
+  }
+  
+  button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Notification styling */
+  .notification-bell {
+    position: relative;
+    font-size: 24px;
+    color: #ffc107;
+    cursor: pointer;
+  }
+  
+  .badge {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background-color: red;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 50%;
+  }
+ 
+  

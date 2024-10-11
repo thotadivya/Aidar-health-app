@@ -1,0 +1,90 @@
+
+  .card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    margin-top: 20px;
+  }
+  
+  .card-title {
+    color: #007bff;
+    font-size: 24px;
+    margin-bottom: 15px;
+  }
+  
+  .list-group-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+    font-size: 18px;
+    border: none;
+  }
+  
+  .label {
+    font-weight: bold;
+    color: #495057;
+  }
+  
+  .value {
+    font-size: 18px;
+    color: #28a745;
+  }
+  
+  .text-muted {
+    font-size: 14px;
+    color: #6c757d;
+  }
+  
+  .list-group-item:nth-child(even) {
+    background-color: #f8f9fa;
+  }
+  .mock-data-container {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }
+  
+  .mock-data-container h3 {
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  .input-group {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 15px;
+  }
+  
+  .input-group input {
+    width: 60%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px 0 0 5px;
+    outline: none;
+  }
+  
+  .input-group button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 0 5px 5px 0;
+  }
+  
+  .info-text {
+    font-size: 14px;
+    color: #555;
+  }
+  .error-message{
+    color: red;
+  }
+  .successmessage{
+    color: blue;
+  }

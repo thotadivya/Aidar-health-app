@@ -1,0 +1,32 @@
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+
+<!-- Notification Alert -->
+<div *ngIf="notificationMessage" class="custom-alert alert alert-danger alert-dismissible fade show" role="alert">
+  {{ notificationMessage }}
+  
+</div>
+
+<!-- Alert Notifications Section -->
+<div class="container mt-5">
+  <div class="d-flex justify-content-between align-items-center mb-4">
+    <h2 class="text-primary">Alert Notifications</h2>
+    <div class="notification-bell position-relative">
+      <i class="fa fa-bell fa-2x text-warning"></i>
+      <span class="badge badge-danger position-absolute" style="top: -10px; right: -10px;">{{ unreviewedAlertCount }}</span>
+    </div>
+  </div>
+
+  <!-- List of Alerts -->
+  <ul class="list-group">
+    <li *ngFor="let alert of alerts" class="list-group-item d-flex justify-content-between align-items-center">
+      <div>
+        <strong>Patient:</strong> {{ alert.patientId }} | 
+        <strong>Metric:</strong> {{ alert.metricName }} | 
+        <strong>Value:</strong> {{ alert.outOfRangeValue }}
+      </div>
+      <button (click)="markAsReviewed(alert.id)" class="btn btn-outline-primary btn-sm">Mark as Reviewed</button>
+    </li>
+  </ul>
+</div>
